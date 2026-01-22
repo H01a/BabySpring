@@ -10,10 +10,15 @@ import com.niuwenyu.springframework.beans.factory.config.BeanDefinition;
 public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry implements BeanFactory{
     @Override
     public Object getBean(String name) throws BeansException {
+        return getBean(name, null);
+    }
+
+    @Override
+    public Object getBean(String name, Object... args) throws BeansException {
         Object bean = getSingleton(name);
-        if (bean == null) {
+        if(bean == null){
             BeanDefinition beanDefinition = getBeanDefinition(name);
-            bean = createBean(name, beanDefinition);
+            bean = createBean(name, beanDefinition, args);
         }
         return bean;
     }
@@ -31,5 +36,5 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
      * @param beanDefinition 包含class等信息
      * @return 创建好的Bean
      */
-    abstract Object createBean(String beanName, BeanDefinition beanDefinition) throws BeansException;
+    abstract Object createBean(String beanName, BeanDefinition beanDefinition, Object[] args) throws BeansException;
 }

@@ -23,4 +23,20 @@ public class BeanFactoryTest {
             e.printStackTrace();
         }
     }
+    @Test
+    public void getBeanWithConstructorParams(){
+        DefaultListableBeanFactory defaultListableBeanFactory = new DefaultListableBeanFactory();
+        try {
+            defaultListableBeanFactory.registerBeanDefinition("userServiceWithoutConstructorParams", new BeanDefinition(UserService.class));
+            defaultListableBeanFactory.registerBeanDefinition("userServiceWithConstructorParams", new BeanDefinition(UserService.class));
+            UserService userService1 = (UserService) defaultListableBeanFactory.getBean("userServiceWithoutConstructorParams");
+            UserService userService2 = (UserService) defaultListableBeanFactory.getBean("userServiceWithConstructorParams", "kk");
+            System.out.println(userService1.getMsg());
+            System.out.println(userService2.getMsg());
+        } catch (BeansException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
 }

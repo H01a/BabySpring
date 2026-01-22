@@ -19,19 +19,12 @@ public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry {
         return singletonObjects.get(beanName);
     }
 
-    Object addSingleton(String beanName, BeanDefinition beanDefinition) throws BeansException {
-        if (singletonObjects.containsKey(beanName)) {
-            throw new BeansException("Bean already exists");
-        } else {
-            try {
-                Object bean = beanDefinition.getBeanClass().getDeclaredConstructor().newInstance();
-                singletonObjects.put(beanName, bean);
-                return bean;
-
-            } catch (InvocationTargetException | InstantiationException | NoSuchMethodException |
-                     IllegalAccessException e) {
-                throw new BeansException("Something wrong");
-            }
+    Object addSingleton(String beanName, Object bean) throws BeansException {
+        if(bean == null){
+            throw new BeansException("bean is null");
+        }else{
+            singletonObjects.put(beanName, bean);
         }
+        return bean;
     }
 }
