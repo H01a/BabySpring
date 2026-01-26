@@ -1,20 +1,30 @@
 package com.niuwenyu.springframework.beans;
 
 public class UserService {
-    private String msg;
+    private String uid;
+    private UserDao userDao;
 
-    public String getMsg() {
-        return msg;
+    public String getUid() {
+        return uid;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public UserDao getUserDao() {
+        return userDao;
     }
+
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
 
     public UserService() {
     }
 
-    public UserService(String msg) {
-        this.msg = msg;
+    public void queryUserInfo(String name){
+        System.out.println("user info: " + userDao.queryUserName(name));
     }
 }

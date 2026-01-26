@@ -4,18 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a71c9f0-1ee3-4ada-a190-b3ecb0cc3638" name="Changes" comment="实现Bean定义、注册、获取">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/UserService.java" afterDir="false" />
+    <list default="true" id="6a71c9f0-1ee3-4ada-a190-b3ecb0cc3638" name="Changes" comment="实现两种含参的实例化方式：JDK, CGLIB">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/PropertyValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/PropertyValues.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/config/BeanReference.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/BeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/BeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/config/BeanDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/config/BeanDefinition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/AbstractBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/AbstractBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/CglibSubclassingInstantiationStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/CglibSubclassingInstantiationStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/DefaultSingletonBeanRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/DefaultSingletonBeanRegistry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/InstantiationStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/InstantiationStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/SimpleInstantiationStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/SimpleInstantiationStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/BeanFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/BeanFactoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,26 +38,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;ms-17&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "ms-17",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.11806375",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="JUnit.BeanFactoryTest.getBeanWithConstructorParams">
+}]]></component>
+  <component name="RunManager" selected="JUnit.BeanFactoryTest.test_BeanFactory">
     <configuration name="BeanFactoryTest.getBeanWithConstructorParams" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BabySpring" />
       <extension name="coverage">
@@ -93,12 +91,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BeanFactoryTest.test_BeanFactory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BabySpring" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niuwenyu.springframework.beans.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.niuwenyu.springframework.beans" />
+      <option name="MAIN_CLASS_NAME" value="com.niuwenyu.springframework.beans.BeanFactoryTest" />
+      <option name="METHOD_NAME" value="test_BeanFactory" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea --add-opens java.base/java.lang=ALL-UNNAMED" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="JUnit.BeanFactoryTest.test_BeanFactory" />
       <item itemvalue="JUnit.BeanFactoryTest.getBeanWithConstructorParams" />
       <item itemvalue="JUnit.BeanFactoryTest.testBeanFactory" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BeanFactoryTest.test_BeanFactory" />
         <item itemvalue="JUnit.BeanFactoryTest.getBeanWithConstructorParams" />
         <item itemvalue="JUnit.BeanFactoryTest.testBeanFactory" />
       </list>
@@ -113,7 +130,7 @@
       <option name="presentableId" value="Default" />
       <updated>1768923617006</updated>
       <workItem from="1768923618302" duration="7501000" />
-      <workItem from="1769033564899" duration="6506000" />
+      <workItem from="1769033564899" duration="12483000" />
     </task>
     <task id="LOCAL-00001" summary="实现Bean定义、注册、获取">
       <created>1768952615071</created>
@@ -122,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1768952615071</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="实现两种含参的实例化方式：JDK, CGLIB">
+      <created>1769040155451</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1769040155451</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,20 +165,36 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="实现Bean定义、注册、获取" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现Bean定义、注册、获取" />
+    <MESSAGE value="实现两种含参的实例化方式：JDK, CGLIB" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现两种含参的实例化方式：JDK, CGLIB" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/BeanFactoryTest.java</url>
-          <line>18</line>
+          <line>19</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/BeanFactoryTest.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="2" />
+          <line>31</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/CglibSubclassingInstantiationStrategy.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
