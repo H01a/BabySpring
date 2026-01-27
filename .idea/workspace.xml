@@ -4,22 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a71c9f0-1ee3-4ada-a190-b3ecb0cc3638" name="Changes" comment="注入属性和依赖对象">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/core/io/ClassPathResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/core/io/DefaultResourceLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/core/io/FileSystemResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/core/io/Resource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/core/io/ResourceLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/core/io/UrlResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/AbstractBeanDefinitionReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/BeanDefinitionReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/xml/XmlBeanDefinitionReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/beans.xml" afterDir="false" />
+    <list default="true" id="6a71c9f0-1ee3-4ada-a190-b3ecb0cc3638" name="Changes" comment="实现从xml配置中加载Bean">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/BeanFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/BeanFactoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +84,7 @@
       <updated>1768923617006</updated>
       <workItem from="1768923618302" duration="7501000" />
       <workItem from="1769033564899" duration="13655000" />
-      <workItem from="1769522078193" duration="12714000" />
+      <workItem from="1769522078193" duration="14026000" />
     </task>
     <task id="LOCAL-00001" summary="实现Bean定义、注册、获取">
       <created>1768952615071</created>
@@ -121,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1769398101238</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="实现从xml配置中加载Bean">
+      <created>1769548182323</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1769548182323</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,7 +135,8 @@
     <MESSAGE value="实现Bean定义、注册、获取" />
     <MESSAGE value="实现两种含参的实例化方式：JDK, CGLIB" />
     <MESSAGE value="注入属性和依赖对象" />
-    <option name="LAST_COMMIT_MESSAGE" value="注入属性和依赖对象" />
+    <MESSAGE value="实现从xml配置中加载Bean" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现从xml配置中加载Bean" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
