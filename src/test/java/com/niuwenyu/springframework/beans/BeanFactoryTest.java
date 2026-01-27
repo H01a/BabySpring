@@ -1,10 +1,15 @@
 package com.niuwenyu.springframework.beans;
 
+import com.niuwenyu.springframework.beans.core.io.DefaultResourceLoader;
 import com.niuwenyu.springframework.beans.factory.config.BeanDefinition;
 import com.niuwenyu.springframework.beans.factory.config.BeanReference;
 import com.niuwenyu.springframework.beans.factory.support.DefaultListableBeanFactory;
+import com.niuwenyu.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.junit.Test;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,6 +50,16 @@ public class BeanFactoryTest {
 
         // 5. UserService 获取bean
         UserService userService = (UserService) beanFactory.getBean("userService");
+        userService.queryUserInfo("a");
+    }
+
+    @Test
+    public void testBeanDefinitionReader() throws IOException, ParserConfigurationException, ClassNotFoundException, SAXException, BeansException {
+        DefaultListableBeanFactory defaultListableBeanFactory = new DefaultListableBeanFactory();
+        XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(defaultListableBeanFactory, new DefaultResourceLoader());
+        xmlBeanDefinitionReader.loadBeanDefinitions("classpath:beans.xml");
+        UserService userService = (UserService) defaultListableBeanFactory.getBean("userService");
+
         userService.queryUserInfo("a");
     }
 

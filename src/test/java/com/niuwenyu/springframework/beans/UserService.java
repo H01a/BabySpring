@@ -25,6 +25,7 @@ public class UserService {
     }
 
     public void queryUserInfo(String name){
+        System.out.println("userDao: " + userDao.toString());
         System.out.println("user info: " + userDao.queryUserName(name));
     }
 }

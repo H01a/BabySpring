@@ -1,0 +1,7 @@
+<beans>
+    <bean id="userDao" class="com.niuwenyu.springframework.beans.UserDao"/>
+    <bean id="userService" class="com.niuwenyu.springframework.beans.UserService">
+        <property name="uid" value="10086"/>
+        <property name="userDao" ref="userDao"/>
+    </bean>
+</beans>
