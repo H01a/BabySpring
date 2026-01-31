@@ -1,5 +1,7 @@
 package com.niuwenyu.springframework.beans;
 
+import com.niuwenyu.springframework.beans.context.ApplicationContext;
+import com.niuwenyu.springframework.beans.context.support.ClassPathXmlApplicationContext;
 import com.niuwenyu.springframework.beans.core.io.DefaultResourceLoader;
 import com.niuwenyu.springframework.beans.factory.config.BeanDefinition;
 import com.niuwenyu.springframework.beans.factory.config.BeanReference;
@@ -61,6 +63,15 @@ public class BeanFactoryTest {
         UserService userService = (UserService) defaultListableBeanFactory.getBean("userService");
 
         userService.queryUserInfo("a");
+    }
+
+
+    @Test
+    public void testContext() throws IOException, ParserConfigurationException, ClassNotFoundException, SAXException, BeansException{
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:beans.xml");
+        UserService userService = (UserService) ctx.getBean("userService");
+        System.out.println(userService.getUid());
+
     }
 
 }

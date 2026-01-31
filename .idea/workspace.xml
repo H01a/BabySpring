@@ -4,8 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a71c9f0-1ee3-4ada-a190-b3ecb0cc3638" name="Changes" comment="实现从xml配置中加载Bean">
+    <list default="true" id="6a71c9f0-1ee3-4ada-a190-b3ecb0cc3638" name="Changes" comment="it's me?">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/context/ApplicationContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/context/ConfigurableApplicationContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/context/support/AbstractApplicationContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/context/support/AbstractRefreshableApplicationContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/context/support/AbstractXmlApplicationContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/context/support/ClassPathXmlApplicationContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/config/AutowireCapableBeanFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/config/BeanFactoryPostProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/config/BeanPostProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/config/ConfigurableBeanFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/config/ConfigurableListableBeanFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/config/HierarchicalBeanFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/config/ListableBeanFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/beanPostProcessor/UserServiceBeanPostProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/AbstractBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/AbstractBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/DefaultListableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/DefaultListableBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/beans.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/BeanFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/BeanFactoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +69,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.BeanFactoryTest.testContext">
     <configuration name="BeanFactoryTest.testBeanDefinitionReader" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="BabySpring" />
       <extension name="coverage">
@@ -68,8 +87,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BeanFactoryTest.testContext" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BabySpring" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niuwenyu.springframework.beans.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.niuwenyu.springframework.beans" />
+      <option name="MAIN_CLASS_NAME" value="com.niuwenyu.springframework.beans.BeanFactoryTest" />
+      <option name="METHOD_NAME" value="testContext" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea --add-opens java.base/java.lang=ALL-UNNAMED" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.BeanFactoryTest.testBeanDefinitionReader" />
+      <item itemvalue="JUnit.BeanFactoryTest.testContext" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BeanFactoryTest.testContext" />
         <item itemvalue="JUnit.BeanFactoryTest.testBeanDefinitionReader" />
       </list>
     </recent_temporary>
@@ -84,7 +125,8 @@
       <updated>1768923617006</updated>
       <workItem from="1768923618302" duration="7501000" />
       <workItem from="1769033564899" duration="13655000" />
-      <workItem from="1769522078193" duration="14026000" />
+      <workItem from="1769522078193" duration="14256000" />
+      <workItem from="1769720115309" duration="16953000" />
     </task>
     <task id="LOCAL-00001" summary="实现Bean定义、注册、获取">
       <created>1768952615071</created>
@@ -114,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1769548182323</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="it's me?">
+      <created>1769549515661</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1769549515661</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,53 +185,74 @@
     <MESSAGE value="实现两种含参的实例化方式：JDK, CGLIB" />
     <MESSAGE value="注入属性和依赖对象" />
     <MESSAGE value="实现从xml配置中加载Bean" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现从xml配置中加载Bean" />
+    <MESSAGE value="it's me?" />
+    <option name="LAST_COMMIT_MESSAGE" value="it's me?" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/BeanFactoryTest.java</url>
-          <line>24</line>
+          <line>26</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/BeanFactoryTest.java</url>
-          <line>36</line>
+          <line>38</line>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/CglibSubclassingInstantiationStrategy.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java</url>
-          <line>72</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/BeanFactoryTest.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/xml/XmlBeanDefinitionReader.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/BeanFactoryTest.java</url>
           <line>59</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/BeanFactoryTest.java</url>
+          <line>61</line>
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/BeanFactoryTest.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java</url>
+          <line>131</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/context/support/AbstractApplicationContext.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/DefaultListableBeanFactory.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/context/support/AbstractApplicationContext.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.niuwenyu.springframework.beans.factory.support.DefaultListableBeanFactory" memberName="beanPostProcessorList" />
+      </pinned-members>
+    </pin-to-top-manager>
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="document" />

@@ -4,4 +4,6 @@
         <property name="uid" value="10086"/>
         <property name="userDao" ref="userDao"/>
     </bean>
+    <bean id="userServiceBeanPostProcessor" class="com.niuwenyu.springframework.beans.beanPostProcessor.UserServiceBeanPostProcessor">
+    </bean>
 </beans>

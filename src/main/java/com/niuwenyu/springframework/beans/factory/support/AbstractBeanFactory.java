@@ -3,11 +3,17 @@ package com.niuwenyu.springframework.beans.factory.support;
 import com.niuwenyu.springframework.beans.BeansException;
 import com.niuwenyu.springframework.beans.factory.BeanFactory;
 import com.niuwenyu.springframework.beans.factory.config.BeanDefinition;
+import com.niuwenyu.springframework.beans.factory.config.BeanPostProcessor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author wenyuniu
  */
 public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry implements BeanFactory{
+    List<BeanPostProcessor> beanPostProcessorList = new ArrayList<>();
+
     @Override
     public Object getBean(String name) throws BeansException {
         return getBean(name, null);

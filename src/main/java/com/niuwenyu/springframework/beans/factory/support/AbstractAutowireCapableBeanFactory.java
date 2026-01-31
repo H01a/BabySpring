@@ -3,26 +3,25 @@ package com.niuwenyu.springframework.beans.factory.support;
 import com.niuwenyu.springframework.beans.BeansException;
 import com.niuwenyu.springframework.beans.PropertyValue;
 import com.niuwenyu.springframework.beans.PropertyValues;
+import com.niuwenyu.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import com.niuwenyu.springframework.beans.factory.config.BeanDefinition;
+import com.niuwenyu.springframework.beans.factory.config.BeanPostProcessor;
 import com.niuwenyu.springframework.beans.factory.config.BeanReference;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author wenyuniu
  */
-public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFactory{
+public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFactory implements AutowireCapableBeanFactory {
     InstantiationStrategy instantiationStrategy = new CglibSubclassingInstantiationStrategy();
 
     public InstantiationStrategy getInstantiationStrategy() {
         return instantiationStrategy;
     }
-
-//    @Override
-//    Object createBean(String beanName, BeanDefinition beanDefinition) throws BeansException {
-//        return createBean(beanName, beanDefinition, (Object[]) null);
-//    }
 
     @Override
     Object createBean(String beanName, BeanDefinition beanDefinition, Object[] args) throws BeansException {
@@ -32,12 +31,56 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
             if(beanDefinition.getPropertyValues() != null){
                 applyPropertyValues(beanName, bean, beanDefinition);
             }
+            bean = initializeBean(beanName, bean, beanDefinition);
         } catch (BeansException e) {
             throw new RuntimeException(e);
         }
 
         return addSingleton(beanName, bean);
     }
+
+
+    private Object initializeBean(String beanName, Object bean, BeanDefinition beanDefinition) {
+        // 1. 执行 BeanPostProcessor Before 处理
+        Object wrappedBean = applyBeanPostProcessorsBeforeInitialization(bean, beanName);
+
+        // 待完成内容：invokeInitMethods(beanName, wrappedBean, beanDefinition);
+        invokeInitMethods(beanName, wrappedBean, beanDefinition);
+
+        // 2. 执行 BeanPostProcessor After 处理
+        wrappedBean = applyBeanPostProcessorsAfterInitialization(bean, beanName);
+        return wrappedBean;
+    }
+
+    private Object applyBeanPostProcessorsAfterInitialization(Object bean, String beanName) {
+        Object result = bean;
+        for(BeanPostProcessor beanPostProcessor: getBeanPostProcessors()){
+            Object current = beanPostProcessor.postProcessAfterInitialization(bean, beanName);
+            if(current == null){
+                return result;
+            }
+            result = current;
+        }
+
+        return result;
+    }
+
+    private void invokeInitMethods(String beanName, Object wrappedBean, BeanDefinition beanDefinition) {
+    }
+
+    private Object applyBeanPostProcessorsBeforeInitialization(Object bean, String beanName) {
+        Object result = bean;
+        for(BeanPostProcessor beanPostProcessor: getBeanPostProcessors()){
+            Object current = beanPostProcessor.postProcessBeforeInitialization(bean, beanName);
+            if(current == null){
+                return result;
+            }
+            result = current;
+        }
+
+        return result;
+    }
+
 
     Object createBeanInstance(BeanDefinition beanDefinition, String beanName, Object[] args) throws BeansException {
         Constructor<?> constructorToUse = null;
@@ -84,5 +127,13 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
         }
     }
 
+    @Override
+    public void addBeanPostProcessor(BeanPostProcessor beanPostProcessor){
+        beanPostProcessorList.add(beanPostProcessor);
+    }
+
+    public List<BeanPostProcessor> getBeanPostProcessors(){
+        return beanPostProcessorList;
+    }
 
 }
