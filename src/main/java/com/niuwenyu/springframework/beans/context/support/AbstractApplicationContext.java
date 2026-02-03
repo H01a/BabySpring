@@ -23,6 +23,7 @@ import java.util.Set;
  * @author wenyuniu
  */
 public abstract class AbstractApplicationContext extends DefaultResourceLoader implements ConfigurableApplicationContext{
+    private boolean closed = false;
     @Override
     public void refresh() throws BeansException, IOException, ParserConfigurationException, ClassNotFoundException, SAXException {
         // 1.创建BeanFactory并加载BeanDefinition
@@ -37,6 +38,9 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader i
         registerBeanPostProcessors(beanFactory);
 
         // 4.提前实例化单例bean
+
+        // 5.注册bean销毁方法
+        registerShutdownHook();
 
 
     }
@@ -85,5 +89,19 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader i
     @Override
     public Object getBean(String name, Object... args) throws BeansException {
         return getBeanFactory().getBean(name, args);
+    }
+
+
+    @Override
+    public void registerShutdownHook() {
+        Runtime.getRuntime().addShutdownHook(new Thread(this::close));
+    }
+
+    @Override
+    public void close() {
+        if(!closed){
+            getBeanFactory().destorySingletons();
+            closed = true;
+        }
     }
 }

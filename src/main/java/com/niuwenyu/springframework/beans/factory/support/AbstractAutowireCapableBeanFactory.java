@@ -3,13 +3,13 @@ package com.niuwenyu.springframework.beans.factory.support;
 import com.niuwenyu.springframework.beans.BeansException;
 import com.niuwenyu.springframework.beans.PropertyValue;
 import com.niuwenyu.springframework.beans.PropertyValues;
-import com.niuwenyu.springframework.beans.factory.config.AutowireCapableBeanFactory;
-import com.niuwenyu.springframework.beans.factory.config.BeanDefinition;
-import com.niuwenyu.springframework.beans.factory.config.BeanPostProcessor;
-import com.niuwenyu.springframework.beans.factory.config.BeanReference;
+import com.niuwenyu.springframework.beans.factory.BeanFactory;
+import com.niuwenyu.springframework.beans.factory.config.*;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,11 +32,20 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
                 applyPropertyValues(beanName, bean, beanDefinition);
             }
             bean = initializeBean(beanName, bean, beanDefinition);
+            registerDisposableBeanIfNecessary(beanName, bean, beanDefinition);
         } catch (BeansException e) {
             throw new RuntimeException(e);
         }
 
         return addSingleton(beanName, bean);
+    }
+
+    public void registerDisposableBeanIfNecessary(String beanName, Object bean, BeanDefinition beanDefinition){
+        if(bean instanceof DisposableBean){
+            addDisposableBean(beanName, (DisposableBean) bean);
+        }else{
+            addDisposableBean(beanName, new DisposableBeanAdapter(bean, beanName, beanDefinition.getDestoryMethod()));
+        }
     }
 
 
@@ -45,7 +54,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
         Object wrappedBean = applyBeanPostProcessorsBeforeInitialization(bean, beanName);
 
         // 待完成内容：invokeInitMethods(beanName, wrappedBean, beanDefinition);
-        invokeInitMethods(beanName, wrappedBean, beanDefinition);
+        bean = invokeInitMethods(beanName, wrappedBean, beanDefinition);
 
         // 2. 执行 BeanPostProcessor After 处理
         wrappedBean = applyBeanPostProcessorsAfterInitialization(bean, beanName);
@@ -65,7 +74,17 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
         return result;
     }
 
-    private void invokeInitMethods(String beanName, Object wrappedBean, BeanDefinition beanDefinition) {
+    private Object invokeInitMethods(String beanName, Object wrappedBean, BeanDefinition beanDefinition) {
+        String initMethodName = beanDefinition.getInitMethod();
+        if(initMethodName != null && initMethodName.length() > 0){
+            try {
+                Method initMethod = wrappedBean.getClass().getSuperclass().getMethod(initMethodName);
+                initMethod.invoke(wrappedBean);
+            }catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e){
+                e.printStackTrace();
+            }
+        }
+        return wrappedBean;
     }
 
     private Object applyBeanPostProcessorsBeforeInitialization(Object bean, String beanName) {
@@ -94,6 +113,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
                 return getInstantiationStrategy().instantiate(beanDefinition, beanName, constructorToUse, args);
             } catch (NoSuchMethodException e) {
                 throw new BeansException("没有这个构造器啊");
+
             }
         }else{
             return getInstantiationStrategy().instantiate(beanDefinition, beanName, null, null);
@@ -135,5 +155,6 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
     public List<BeanPostProcessor> getBeanPostProcessors(){
         return beanPostProcessorList;
     }
+
 
 }

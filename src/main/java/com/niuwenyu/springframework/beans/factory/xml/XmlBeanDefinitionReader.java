@@ -68,6 +68,8 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
             Element bean = (Element) beanList.item(i);
             String beanName = bean.getAttribute("id");
             Class<?> beanClass = Class.forName(bean.getAttribute("class"));
+            String initMethod = bean.getAttribute("init-Method");
+            String destoryMethod = bean.getAttribute("destroy-Method");
 
             NodeList properties = bean.getElementsByTagName("property");
             for(int j = 0; j < properties.getLength();j ++){
@@ -84,6 +86,8 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
                 }
             }
             BeanDefinition beanDefinition = new BeanDefinition(beanClass, propertyValues);
+            beanDefinition.setInitMethod(initMethod);
+            beanDefinition.setDestoryMethod(destoryMethod);
             registry.registerBeanDefinition(beanName, beanDefinition);
         }
     }

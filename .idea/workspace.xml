@@ -4,27 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a71c9f0-1ee3-4ada-a190-b3ecb0cc3638" name="Changes" comment="it's me?">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/context/ApplicationContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/context/ConfigurableApplicationContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/context/support/AbstractApplicationContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/context/support/AbstractRefreshableApplicationContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/context/support/AbstractXmlApplicationContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/context/support/ClassPathXmlApplicationContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/config/AutowireCapableBeanFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/config/BeanFactoryPostProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/config/BeanPostProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/config/ConfigurableBeanFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/config/ConfigurableListableBeanFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/config/HierarchicalBeanFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/config/ListableBeanFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/beanPostProcessor/UserServiceBeanPostProcessor.java" afterDir="false" />
+    <list default="true" id="6a71c9f0-1ee3-4ada-a190-b3ecb0cc3638" name="Changes" comment="实现应用上下文">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/DisposableBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/DisposableBeanAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/context/ConfigurableApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/context/ConfigurableApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/context/support/AbstractApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/context/support/AbstractApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/config/BeanDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/config/BeanDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/config/ConfigurableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/config/ConfigurableBeanFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/AbstractBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/AbstractBeanFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/DefaultListableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/DefaultListableBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/DefaultSingletonBeanRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/DefaultSingletonBeanRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/xml/XmlBeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/xml/XmlBeanDefinitionReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/beans.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/BeanFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/BeanFactoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -50,25 +44,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;ms-17&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.11806375&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "ms-17",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.11806375",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="JUnit.BeanFactoryTest.testContext">
     <configuration name="BeanFactoryTest.testBeanDefinitionReader" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="BabySpring" />
@@ -83,6 +78,22 @@
       <option name="METHOD_NAME" value="testBeanDefinitionReader" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea --add-opens java.base/java.lang=ALL-UNNAMED" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BeanFactoryTest.testContext (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BabySpring" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niuwenyu.springframework.beans.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.niuwenyu.springframework.beans" />
+      <option name="MAIN_CLASS_NAME" value="com.niuwenyu.springframework.beans.BeanFactoryTest" />
+      <option name="METHOD_NAME" value="testContext" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -106,11 +117,13 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.BeanFactoryTest.testBeanDefinitionReader" />
+      <item itemvalue="JUnit.BeanFactoryTest.testContext (1)" />
       <item itemvalue="JUnit.BeanFactoryTest.testContext" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.BeanFactoryTest.testContext" />
+        <item itemvalue="JUnit.BeanFactoryTest.testContext (1)" />
         <item itemvalue="JUnit.BeanFactoryTest.testBeanDefinitionReader" />
       </list>
     </recent_temporary>
@@ -126,7 +139,9 @@
       <workItem from="1768923618302" duration="7501000" />
       <workItem from="1769033564899" duration="13655000" />
       <workItem from="1769522078193" duration="14256000" />
-      <workItem from="1769720115309" duration="16953000" />
+      <workItem from="1769720115309" duration="18501000" />
+      <workItem from="1770078819913" duration="624000" />
+      <workItem from="1770097355744" duration="8025000" />
     </task>
     <task id="LOCAL-00001" summary="实现Bean定义、注册、获取">
       <created>1768952615071</created>
@@ -163,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1769549515661</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="实现应用上下文">
+      <created>1769821412092</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1769821412092</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,7 +208,8 @@
     <MESSAGE value="注入属性和依赖对象" />
     <MESSAGE value="实现从xml配置中加载Bean" />
     <MESSAGE value="it's me?" />
-    <option name="LAST_COMMIT_MESSAGE" value="it's me?" />
+    <MESSAGE value="实现应用上下文" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现应用上下文" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -217,33 +240,13 @@
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java</url>
-          <line>131</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/context/support/AbstractApplicationContext.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/DefaultListableBeanFactory.java</url>
           <line>33</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/context/support/AbstractApplicationContext.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java</url>
-          <line>85</line>
+          <line>42</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>

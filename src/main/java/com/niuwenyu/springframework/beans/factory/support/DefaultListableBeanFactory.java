@@ -53,4 +53,12 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
             beanDefinitionMap.put(beanName, beanDefinition);
         }
     }
+
+    @Override
+    public void destorySingletons() {
+        List<DisposableBean> beans = getDisposableBeans();
+        for(DisposableBean bean: beans){
+            bean.destory();
+        }
+    }
 }
