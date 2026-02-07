@@ -36,6 +36,8 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader i
 
         // 3.实例化前注册BeanPostProcessor
         registerBeanPostProcessors(beanFactory);
+        // 注册ApplicationContextAwareProcessor
+        beanFactory.addBeanPostProcessor(new ApplicationContextAwareProcessor(this));
 
         // 4.提前实例化单例bean
 

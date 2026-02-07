@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a71c9f0-1ee3-4ada-a190-b3ecb0cc3638" name="Changes" comment="实现应用上下文">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/DisposableBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/DisposableBeanAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/context/support/ApplicationContextAwareProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/ApplicationContextAware.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/Aware.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/BeanClassLoaderAware.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/BeanFactoryAware.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/BeanNameAware.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/context/ConfigurableApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/context/ConfigurableApplicationContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/context/support/AbstractApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/context/support/AbstractApplicationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/config/BeanDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/config/BeanDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/config/ConfigurableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/config/ConfigurableBeanFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/DefaultListableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/DefaultListableBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/DefaultSingletonBeanRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/DefaultSingletonBeanRegistry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/xml/XmlBeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/xml/XmlBeanDefinitionReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/beans.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/BeanFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/BeanFactoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/niuwenyu/springframework/beans/UserService.java" afterDir="false" />
     </list>
@@ -28,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -141,7 +138,7 @@
       <workItem from="1769522078193" duration="14256000" />
       <workItem from="1769720115309" duration="18501000" />
       <workItem from="1770078819913" duration="624000" />
-      <workItem from="1770097355744" duration="8025000" />
+      <workItem from="1770097355744" duration="12168000" />
     </task>
     <task id="LOCAL-00001" summary="实现Bean定义、注册、获取">
       <created>1768952615071</created>
@@ -185,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1769821412092</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="实现应用上下文">
+      <created>1770107126908</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1770107126908</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,13 +244,8 @@
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/factory/support/DefaultListableBeanFactory.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/niuwenyu/springframework/beans/context/support/AbstractApplicationContext.java</url>
-          <line>42</line>
+          <line>44</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>

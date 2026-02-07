@@ -1,10 +1,14 @@
 package com.niuwenyu.springframework.beans;
 
+import com.niuwenyu.springframework.beans.context.ApplicationContext;
+import com.niuwenyu.springframework.beans.factory.ApplicationContextAware;
 import com.niuwenyu.springframework.beans.factory.support.DisposableBean;
 
-public class UserService implements DisposableBean {
+public class UserService implements DisposableBean, ApplicationContextAware {
     private String uid;
     private UserDao userDao;
+
+    private ApplicationContext context;
 
     public String getUid() {
         return uid;
@@ -38,5 +42,14 @@ public class UserService implements DisposableBean {
     @Override
     public void destory() {
         System.out.println("Bean Destroy Method: UserService销毁方法");
+    }
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) {
+        context = applicationContext;
+    }
+
+    public ApplicationContext getContext() {
+        return context;
     }
 }

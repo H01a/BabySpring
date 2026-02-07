@@ -3,7 +3,7 @@ package com.niuwenyu.springframework.beans.factory.support;
 import com.niuwenyu.springframework.beans.BeansException;
 import com.niuwenyu.springframework.beans.PropertyValue;
 import com.niuwenyu.springframework.beans.PropertyValues;
-import com.niuwenyu.springframework.beans.factory.BeanFactory;
+import com.niuwenyu.springframework.beans.factory.*;
 import com.niuwenyu.springframework.beans.factory.config.*;
 
 import java.lang.reflect.Constructor;
@@ -50,6 +50,17 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 
 
     private Object initializeBean(String beanName, Object bean, BeanDefinition beanDefinition) {
+        if(bean instanceof Aware){
+            if(bean instanceof BeanFactoryAware){
+                ((BeanFactoryAware) bean).setBeanFactory(this);
+            }
+            if(bean instanceof BeanNameAware){
+                ((BeanNameAware) bean).setBeanName(beanName);
+            }
+            if(bean instanceof BeanClassLoaderAware){
+                ((BeanClassLoaderAware) bean).setBeanClassLoader(Thread.currentThread().getContextClassLoader());
+            }
+        }
         // 1. 执行 BeanPostProcessor Before 处理
         Object wrappedBean = applyBeanPostProcessorsBeforeInitialization(bean, beanName);
 
