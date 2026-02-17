@@ -74,4 +74,12 @@ public class BeanFactoryTest {
         ctx.close();
     }
 
+    @Test
+    public void testFactoryBean() throws IOException, ParserConfigurationException, ClassNotFoundException, BeansException, SAXException {
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:beans.xml");
+        UserService userService = (UserService) ctx.getBean("userService");
+        userService.queryUserInfo("user");
+        ctx.close();
+    }
+
 }

@@ -70,6 +70,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
             Class<?> beanClass = Class.forName(bean.getAttribute("class"));
             String initMethod = bean.getAttribute("init-Method");
             String destoryMethod = bean.getAttribute("destroy-Method");
+            String scope = bean.getAttribute("scope");
 
             NodeList properties = bean.getElementsByTagName("property");
             for(int j = 0; j < properties.getLength();j ++){
@@ -88,6 +89,9 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
             BeanDefinition beanDefinition = new BeanDefinition(beanClass, propertyValues);
             beanDefinition.setInitMethod(initMethod);
             beanDefinition.setDestoryMethod(destoryMethod);
+            if(scope.length() > 0){
+                beanDefinition.setScope(scope);
+            }
             registry.registerBeanDefinition(beanName, beanDefinition);
         }
     }

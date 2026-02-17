@@ -36,8 +36,11 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
         } catch (BeansException e) {
             throw new RuntimeException(e);
         }
-
-        return addSingleton(beanName, bean);
+        if(beanDefinition.getScope()) {
+            return addSingleton(beanName, bean);
+        }else{
+            return bean;
+        }
     }
 
     public void registerDisposableBeanIfNecessary(String beanName, Object bean, BeanDefinition beanDefinition){

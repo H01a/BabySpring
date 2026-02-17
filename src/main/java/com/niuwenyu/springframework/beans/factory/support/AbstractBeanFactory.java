@@ -2,6 +2,7 @@ package com.niuwenyu.springframework.beans.factory.support;
 
 import com.niuwenyu.springframework.beans.BeansException;
 import com.niuwenyu.springframework.beans.factory.BeanFactory;
+import com.niuwenyu.springframework.beans.factory.FactoryBean;
 import com.niuwenyu.springframework.beans.factory.config.BeanDefinition;
 import com.niuwenyu.springframework.beans.factory.config.BeanPostProcessor;
 
@@ -11,7 +12,7 @@ import java.util.List;
 /**
  * @author wenyuniu
  */
-public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry implements BeanFactory{
+public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport implements BeanFactory{
     List<BeanPostProcessor> beanPostProcessorList = new ArrayList<>();
 
     @Override
@@ -25,6 +26,10 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
         if(bean == null){
             BeanDefinition beanDefinition = getBeanDefinition(name);
             bean = createBean(name, beanDefinition, args);
+        }
+
+        if(bean instanceof FactoryBean<?>){
+            bean = getObjectFromFactoryBean((FactoryBean) bean, name);
         }
         return bean;
     }

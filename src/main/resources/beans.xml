@@ -1,9 +1,14 @@
+<!--<beans>-->
+<!--    <bean id="userDao" class="com.niuwenyu.springframework.beans.UserDao"/>-->
+<!--    <bean id="userService" class="com.niuwenyu.springframework.beans.UserService" init-Method="init">-->
+<!--        <property name="uid" value="10086"/>-->
+<!--        <property name="userDao" ref="userDao"/>-->
+<!--    </bean>-->
+<!--    <bean id="userServiceBeanPostProcessor" class="com.niuwenyu.springframework.beans.beanPostProcessor.UserServiceBeanPostProcessor">-->
+<!--    </bean>-->
+<!--</beans>-->
+
 <beans>
-    <bean id="userDao" class="com.niuwenyu.springframework.beans.UserDao"/>
-    <bean id="userService" class="com.niuwenyu.springframework.beans.UserService" init-Method="init">
-        <property name="uid" value="10086"/>
-        <property name="userDao" ref="userDao"/>
-    </bean>
-    <bean id="userServiceBeanPostProcessor" class="com.niuwenyu.springframework.beans.beanPostProcessor.UserServiceBeanPostProcessor">
+    <bean id="userService" class="com.niuwenyu.springframework.beans.factoryBean.UserServiceFactoryBean">
     </bean>
 </beans>

@@ -6,11 +6,28 @@ import com.niuwenyu.springframework.beans.PropertyValues;
  * @author wenyuniu
  */
 public class BeanDefinition {
+    private String SCOPE_SINGLETON = ConfigurableBeanFactory.SCOPE_SINGLETON;
+    private String SCOPE_PROTOTYPE = ConfigurableBeanFactory.SCOPE_PROTOTYPE;
+
     private Class<?> beanClass;
     private PropertyValues propertyValues;
 
     private String initMethod;
     private String destoryMethod;
+
+    private String scope;
+
+    private boolean prototype = false;
+    private boolean singleton = true;
+
+    public void setScope(String scope){
+        this.scope = scope;
+        prototype = this.scope.equals(SCOPE_PROTOTYPE);
+        singleton = this.scope.equals(SCOPE_SINGLETON);
+    }
+    public boolean getScope(){
+        return singleton;
+    }
 
     public String getInitMethod() {
         return initMethod;
