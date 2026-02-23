@@ -38,6 +38,25 @@
             <artifactId>asm</artifactId>
             <version>9.6</version>
         </dependency>
+<!--        aspectj相关依赖-->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.21</version>
+        </dependency>
+
+        <dependency>
+            <groupId>aopalliance</groupId>
+            <artifactId>aopalliance</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+<!--        AopUtils的依赖-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>5.3.30</version> <!-- 或与你Spring版本一致 -->
+        </dependency>
     </dependencies>
 
 </project>

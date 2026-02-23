@@ -4,7 +4,7 @@ import com.niuwenyu.springframework.beans.context.ApplicationContext;
 import com.niuwenyu.springframework.beans.factory.ApplicationContextAware;
 import com.niuwenyu.springframework.beans.factory.support.DisposableBean;
 
-public class UserService implements DisposableBean, ApplicationContextAware {
+public class UserService implements DisposableBean, ApplicationContextAware, IUserService{
     private String uid;
     private UserDao userDao;
 
@@ -31,8 +31,9 @@ public class UserService implements DisposableBean, ApplicationContextAware {
     }
 
     public void queryUserInfo(String name){
-        System.out.println("userDao: " + userDao.toString());
-        System.out.println("user info: " + userDao.queryUserName(name));
+//        System.out.println("userDao: " + userDao.toString());
+//        System.out.println("user info: " + userDao.queryUserName(name));
+        System.out.println("say my name");
     }
 
     public void init(){
